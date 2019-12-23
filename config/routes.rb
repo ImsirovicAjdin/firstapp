@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'yet_another/index'
+  get 'yet_another/update'
+  get 'yet_another/edit'
+  get 'yet_another/hello'
   # get 'play/index'
   # get ':controller(/:action(/:id))'
   match "/", :to => "play#index", :via => :get
