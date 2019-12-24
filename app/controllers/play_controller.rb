@@ -1,5 +1,6 @@
 class PlayController < ApplicationController
   def index
+    @id = params['id']
   end
   def home
     redirect_to(
