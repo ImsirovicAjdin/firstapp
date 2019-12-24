@@ -3,3 +3,29 @@
 <p>
     <%= @greeting %>
 </p>
+<p>
+<%= link_to 'Go to another#edit', 
+  {:controller => 'another',
+  :action => 'edit'} %>
+</p>
+<p>
+<%= button_to 'Go to another#edit', 
+  {:controller => 'another',
+  :action => 'edit'}, method: :get %>
+</p>
+<h2>
+    <%= link_to 'Go to another#edit', 
+    {:controller => 'another',
+    :action => 'edit',
+    :pickColoe => 'blue',
+    :pickCar => 'minivan',
+    :user => 1}%>
+</h2>
+<h1>
+    <%= link_to 'Go to another#edit', 
+    {:controller => 'another',
+    :action => 'edit',
+    :pickColoe => 'blue',
+    :pickCar => 'minivan',
+    :id => 1}%>
+</h1>
