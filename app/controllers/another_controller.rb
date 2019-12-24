@@ -1,5 +1,6 @@
 class AnotherController < ApplicationController
     def index
+        @greeting = "Good morning"
     end
 
     def update
