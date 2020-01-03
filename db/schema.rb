@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_26_155147) do
+ActiveRecord::Schema.define(version: 2020_01_03_101812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_plot_updates", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "movie_id"], name: "index_movie_plot_updates_on_user_id_and_movie_id"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title", limit: 150
@@ -21,6 +30,12 @@ ActiveRecord::Schema.define(version: 2019_12_26_155147) do
     t.bigint "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movies_users", id: false, force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "user_id"
+    t.index ["user_id", "movie_id"], name: "index_movies_users_on_user_id_and_movie_id"
   end
 
   create_table "users", force: :cascade do |t|
