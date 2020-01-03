@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'movies/new'
+  get 'movies/index'
+  get 'movies/show'
+  get 'movies/edit'
+  get 'movies/delete'
   # get 'yet_another/index'
   # get 'yet_another/update'
   # get 'yet_another/edit'
